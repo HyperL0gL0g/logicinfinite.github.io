@@ -1,0 +1,31 @@
+ <?php
+$con= mysqli_connect('remotemysql.com:3306','Pe6XfFDcP7','NCyI9AXqWs');
+  
+  if(!$con)
+  {
+
+	  echo " SERVER NOT CONNECTED";
+  }
+
+  if(!mysqli_select_db($con,'Pe6XfFDcP7'))
+  {
+	  echo " DATABASE NOT SELECTED";
+  }
+
+$name= $_POST['name'];
+$email= $_POST['email'];
+$message= $_POST['message'];
+$sql = "INSERT INTO new (name,email,message) VALUES ('$name','$email','$message')";
+
+  if(!mysqli_query($con,$sql))
+  {
+	  echo "NOT INSERTED INTO TABLE";
+  }
+  
+  else
+  {
+	  echo " INSERTION SUCCESS";
+  }
+  ?>
+
+
