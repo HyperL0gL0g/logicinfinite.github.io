@@ -2883,7 +2883,10 @@
 
 		.wrapper.style2 {
 			background-color: #f2f2f2;
+			background-image: url('https://images.unsplash.com/photo-1520970014086-2208d157c9e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
 			color: #a6a6a6;
+			background-repeat: no-repeat;
+			background-size: 1518px 600px
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
@@ -2891,7 +2894,7 @@
 			}
 
 			.wrapper.style2 a {
-				color: #8a4680;
+				color: #000;
 			}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
