@@ -1,315 +1,249 @@
-/*
-	Hielo by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+//common side navbar call
+
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
+
+//Get the top button
+var mybutton = document.getElementById("myBtn");
+
+if(mybutton) {
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 350 ||
+      document.documentElement.scrollTop > 350
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+}
+
+//Footer and Navbar
+
+let header = $(`
+<nav class="fixed-top black">
+<div class="nav-wrapper">
+    <a href="#!" class="brand-logo"><img src="assets/images/John-Doe1.png"></a>
+    <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
+            class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+        <li><a class="white-text" href="index.html">Home</a></li>
+        <li><a class="white-text" href="experience.html">Experience</a></li>
+        <li><a class="white-text" href="projects.html">Projects</a></li>
+        <li><a class="white-text" href="research.html">Research</a></li>
+        <li><a class="white-text" href="education.html">Education</a></li>
+        <li><a class="white-text" href="skill.html">Skills</a></li>
+        <li><a class="white-text" href="index.html">Blog</a></li>
+        <!--TOGGLE FOR LIGHT/DARK MODE-->
+        <li>
+          <label for="switch-1" class="theme-switch">
+            <input class="toggle-checkbox" type="checkbox" id="switch-1" name="theme" />
+            <div class='toggle-slot'>
+              <div class='sun-icon-wrapper'>
+                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"> </div>
+              </div>
+              <div class='toggle-button-1 toggle-button'></div>
+              <div class='moon-icon-wrapper'>
+                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"> </div>
+              </div>
+            </div>
+          </label>
+        </li>
+    </ul>
+</div>
+</nav>
+
+<!--Side Nav Bar -->
+<ul class="sidenav" id="mobile-demo">
+<li><a class="sidenav-close" href="#!"><i class="material-icons">close</i></a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="skill.html">Skills</a></li>
+<li><a href="index.html">Blog</a></li>
+
+<!--TOGGLE FOR LIGHT/DARK MODE-->
+        <li>
+        <label for="switch-2" class="theme-switch">
+        <input class="toggle-checkbox" type="checkbox" id="switch-2" name="theme" />
+          <div class='toggle-slot'>
+          <div class='sun-icon-wrapper'>
+          <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"> </div>
+          </div>
+          <div class='toggle-button-2 toggle-button'></div>
+          <div class='moon-icon-wrapper'>
+          <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"> </div>
+          </div>
+          </div>
+          </label>
+        </li>
+</ul>`);
+
+let footer = $(`
+<footer class="webintern-footer">
+    <div class="footer-left">
+      <div class="footer-text">
+        <p>"Develop a passion for learning. If you do, you will never cease to grow."</p>
+      </div>
+      <div class="footer-icons">
+      <a href="#" class="linkedin sub-footer-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="git sub-footer-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="twitter sub-footer-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="email-icon sub-footer-icon" >
+        <i id="mail" class="fa fa-envelope" ></i>
+        </a>
+        <a href="#" class="kaggle sub-footer-icon" >
+        <i class="fab fa-kaggle" id="kaggle-icon" ></i>
+        </a> 
+        <!-- <a href="#" class="google-scholar sub-footer-icon">
+        <i class="ai ai-google-scholar-square ai-3x" ></i>
+        </a>
+         <a href="#" class="leetcode sub-footer-icon">
+        <span class="iconify" data-icon="cib:leetcode" data-inline="false"></span>
+        </a>
+        <a href="#" class="codeforces sub-footer-icon">
+        <span class="iconify" data-icon="simple-icons:codeforces" data-inline="false"></span>
+        </a>
+        <a href="#" class="dribbble sub-footer-icon">
+              <i class="fab fa-dribbble"></i>
+            </a>
+            <a href="#" class="instagram sub-footer-icon">
+            <i class="fab fa-instagram"></i>
+          </a>  -->
+        </div>
+    </div>
+    <div class="footer-right">
+      <h6 class="display-7">Get in Touch</h6>
+      <form action ="https://formspree.io/f/mleollop" method="post" style="width:80%; margin-left:7%;">
+        <div class="name">
+          <input type="text" name="name" placeholder="Name" id="inputs" required>
+        </div>
+        <div class="email">
+          <input type="email" name="email"  placeholder="Email"  id="inputs" required>
+        </div>
+        <div class="msg">
+          <textarea type="text" name="msg" placeholder="Message" id="inputs" required></textarea>
+        </div>
+        <button class="submit"  type="submit">Send</button>
+      </form>
+    </div>
+    
+    <!-- <div class="tt-copy">
+      <div class="container col-sm-6">
+       <center class="text-animation">Made with <i class="fa fa-heart" style="color: red;"></i></center>
+      </div>
+    </div> -->
+    
+    </footer>`);
+let bodyElement = $(`body`);
+bodyElement.prepend(header);
+bodyElement.append(footer);
+
+/*JavaScript for toggle for light/dark mode*/
+
+// selecting toggler dynamically as their are two separate code sections for the toggler to support both mobile screen and desktop screens
+if(window.innerWidth <= 992) {
+  var checkbox = document.querySelector("#switch-2");
+  var toggler = document.querySelector('.toggle-button-2');
+} else {
+  var checkbox = document.querySelector("#switch-1");
+  var toggler = document.querySelector('.toggle-button-1');
+}
+
+if (checkbox) {
+  let a = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", a); // setting the initial theme to light
+
+  if (localStorage.getItem("theme") === "dark") {
+    checkbox.checked = true;
+  }
+
+  // selecting the footer text & footer icons
+  const footerText = document.querySelector('.footer-text p');
+  const footerIcons = document.querySelectorAll('.sub-footer-icon');
+
+  // listening for click on toggler
+  toggler.addEventListener("click", () => {
+    if (checkbox.checked) {
+      // if theme is dark then on the toggler click we have to make it light
+      trans();
+      // changing the color
+      toggleDarkColor();
+
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    } else { 
+      /*
+      if there is click on toggler and if theme is light (initially it will be light) then the theme should convert to dark
+      */
+      trans();
+      // changing the color
+      toggleLightColor();
+
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
+  let trans = () => {
+    document.documentElement.classList.add("transition");
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("transition");
+    }, 1000);
+  };
+
+  // function for changing color when dark theme is on.
+  let toggleDarkColor = () => {
+
+    footerIcons.forEach(icon => {
+        icon.style.backgroundColor = 'transparent';
+
+        // hover effect
+        icon.addEventListener('mouseover',  () => {
+          icon.style.backgroundColor = 'transparent';
+        });
+
+        icon.addEventListener('mouseleave',  () => {
+          icon.style.backgroundColor = 'transparent';
+        });
+    });
+  }
+
+  // function for changing color when the light theme is on.
+  let toggleLightColor = () => {
+
+    footerIcons.forEach(icon => {
+        icon.style.backgroundColor='transparent';
+        // hover effect
+        icon.addEventListener('mouseover',  () => {
+          icon.style.backgroundColor = 'transparent';
+         
+        });
+
+        icon.addEventListener('mouseleave',  () => {
+          icon.style.backgroundColor = 'transparent';
+        });
+    });
+  } 
+}
 
-var settings = {
 
-	banner: {
-
-		// Indicators (= the clickable dots at the bottom).
-			indicators: true,
-
-		// Transition speed (in ms)
-		// For timing purposes only. It *must* match the transition speed of "#banner > article".
-			speed: 1500,
-
-		// Transition delay (in ms)
-			delay: 5000,
-
-		// Parallax intensity (between 0 and 1; higher = more intense, lower = less intense; 0 = off)
-			parallax: 0.25
-
-	}
-
-};
-
-(function($) {
-
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)'
-	});
-
-	/**
-	 * Applies parallax scrolling to an element's background image.
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn._parallax = (skel.vars.browser == 'ie' || skel.vars.mobile) ? function() { return $(this) } : function(intensity) {
-
-		var	$window = $(window),
-			$this = $(this);
-
-		if (this.length == 0 || intensity === 0)
-			return $this;
-
-		if (this.length > 1) {
-
-			for (var i=0; i < this.length; i++)
-				$(this[i])._parallax(intensity);
-
-			return $this;
-
-		}
-
-		if (!intensity)
-			intensity = 0.25;
-
-		$this.each(function() {
-
-			var $t = $(this),
-				on, off;
-
-			on = function() {
-
-				$t.css('background-position', 'center 100%, center 100%, center 0px');
-
-				$window
-					.on('scroll._parallax', function() {
-
-						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
-
-						$t.css('background-position', 'center ' + (pos * (-1 * intensity)) + 'px');
-
-					});
-
-			};
-
-			off = function() {
-
-				$t
-					.css('background-position', '');
-
-				$window
-					.off('scroll._parallax');
-
-			};
-
-			skel.on('change', function() {
-
-				if (skel.breakpoint('medium').active)
-					(off)();
-				else
-					(on)();
-
-			});
-
-		});
-
-		$window
-			.off('load._parallax resize._parallax')
-			.on('load._parallax resize._parallax', function() {
-				$window.trigger('scroll');
-			});
-
-		return $(this);
-
-	};
-
-	/**
-	 * Custom banner slider for Slate.
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn._slider = function(options) {
-
-		var	$window = $(window),
-			$this = $(this);
-
-		if (this.length == 0)
-			return $this;
-
-		if (this.length > 1) {
-
-			for (var i=0; i < this.length; i++)
-				$(this[i])._slider(options);
-
-			return $this;
-
-		}
-
-		// Vars.
-			var	current = 0, pos = 0, lastPos = 0,
-				slides = [], indicators = [],
-				$indicators,
-				$slides = $this.children('article'),
-				intervalId,
-				isLocked = false,
-				i = 0;
-
-		// Turn off indicators if we only have one slide.
-			if ($slides.length == 1)
-				options.indicators = false;
-
-		// Functions.
-			$this._switchTo = function(x, stop) {
-
-				if (isLocked || pos == x)
-					return;
-
-				isLocked = true;
-
-				if (stop)
-					window.clearInterval(intervalId);
-
-				// Update positions.
-					lastPos = pos;
-					pos = x;
-
-				// Hide last slide.
-					slides[lastPos].removeClass('top');
-
-					if (options.indicators)
-						indicators[lastPos].removeClass('visible');
-
-				// Show new slide.
-					slides[pos].addClass('visible').addClass('top');
-
-					if (options.indicators)
-						indicators[pos].addClass('visible');
-
-				// Finish hiding last slide after a short delay.
-					window.setTimeout(function() {
-
-						slides[lastPos].addClass('instant').removeClass('visible');
-
-						window.setTimeout(function() {
-
-							slides[lastPos].removeClass('instant');
-							isLocked = false;
-
-						}, 100);
-
-					}, options.speed);
-
-			};
-
-		// Indicators.
-			if (options.indicators)
-				$indicators = $('<ul class="indicators"></ul>').appendTo($this);
-
-		// Slides.
-			$slides
-				.each(function() {
-
-					var $slide = $(this),
-						$img = $slide.find('img');
-
-					// Slide.
-						$slide
-							.css('background-image', 'url("' + $img.attr('src') + '")')
-							.css('background-position', ($slide.data('position') ? $slide.data('position') : 'center'));
-
-					// Add to slides.
-						slides.push($slide);
-
-					// Indicators.
-						if (options.indicators) {
-
-							var $indicator_li = $('<li>' + i + '</li>').appendTo($indicators);
-
-							// Indicator.
-								$indicator_li
-									.data('index', i)
-									.on('click', function() {
-										$this._switchTo($(this).data('index'), true);
-									});
-
-							// Add to indicators.
-								indicators.push($indicator_li);
-
-						}
-
-					i++;
-
-				})
-				._parallax(options.parallax);
-
-		// Initial slide.
-			slides[pos].addClass('visible').addClass('top');
-
-			if (options.indicators)
-				indicators[pos].addClass('visible');
-
-		// Bail if we only have a single slide.
-			if (slides.length == 1)
-				return;
-
-		// Main loop.
-			intervalId = window.setInterval(function() {
-
-				current++;
-
-				if (current >= slides.length)
-					current = 0;
-
-				$this._switchTo(current);
-
-			}, options.delay);
-
-	};
-
-	$(function() {
-
-		var	$window 	= $(window),
-			$body 		= $('body'),
-			$header 	= $('#header'),
-			$banner 	= $('.banner');
-
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
-
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
-
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
-
-		// Banner.
-			$banner._slider(settings.banner);
-
-		// Menu.
-			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right'
-				});
-
-		// Header.
-			if (skel.vars.IEVersion < 9)
-				$header.removeClass('alt');
-
-			if ($banner.length > 0
-			&&	$header.hasClass('alt')) {
-
-				$window.on('resize', function() { $window.trigger('scroll'); });
-
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
-				});
-
-			}
-
-	});
-
-})(jQuery);
